@@ -39,6 +39,22 @@
         </form>
         <div id="message" class="hidden"></div>
       </section>
+
+      <!-- Add this to your activity card template -->
+      <div class="activity-card">
+        <h4>{activity_name}</h4>
+        <p>{activity_description}</p>
+        <p><strong>Schedule:</strong> {activity_schedule}</p>
+        <p><strong>Max Participants:</strong> {activity_max_participants}</p>
+        <div class="participants-section">
+          <h5>Participants</h5>
+          <ul class="participants-list">
+            <!-- Render each participant as a list item -->
+            {activity_participants.map(email => `<li>${email}</li>`).join('')}
+          </ul>
+        </div>
+      </div>
+      <!-- ...existing code... -->
     </main>
 
     <footer>
